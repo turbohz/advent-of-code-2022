@@ -1,2 +1,3 @@
-# advent-of-code-2022
-Solutions to Advent of Code 2022 challenges, using Rust.
+# Advent of Code 2022
+
+My solutions to the _Advent of Code 2022_ challenges, using the Rust programming language.
