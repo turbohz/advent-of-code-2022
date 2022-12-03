@@ -1,22 +1,21 @@
 // https://adventofcode.com/2022/day/1
 
-fn aggregate(acc: Vec<u32>, v:&str) -> Vec<u32> {
-	let mut result = acc.clone();
-	let last = result.len()-1;
+fn aggregate<'a>(acc: &'a mut Vec<u32>, v:&str) -> &'a mut Vec<u32> {
+	let last = acc.len()-1;
 	if v.is_empty() {
-		result.push(0);
+		acc.push(0);
 	} else {
 		let calories: u32  = v.parse().unwrap();
-		result[last] = calories + acc[last];
+		acc[last] += calories;
 	}
-	result
+	acc
 }
 
 pub fn solution(i: &str) -> String {
 	let lines = i.lines();
-	let acc:Vec<u32> = vec![0];
+	let mut acc:Vec<u32> = vec![0];
 	// aggregate
-	let stock = lines.fold(acc, aggregate);
+	let stock = lines.fold(&mut acc, aggregate);
 	stock.iter().max().unwrap().to_string()
 }
 
