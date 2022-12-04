@@ -11,7 +11,7 @@ fn aggregate<'a>(acc: &'a mut Vec<u32>, v:&str) -> &'a mut Vec<u32> {
 	acc
 }
 
-pub fn solution(i: &str) -> String {
+pub fn solve(i: &str) -> String {
 	let lines = i.lines();
 	let mut acc:Vec<u32> = vec![0];
 	// aggregate
@@ -21,7 +21,7 @@ pub fn solution(i: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-	use crate::day01::solution;
+	use crate::day01::solve;
 	const EXPECTED : &str = "24000";
 	const INPUT : &'static str = r###"
 1000
@@ -43,7 +43,7 @@ mod tests {
 
 	#[test]
 	fn test() {
-		let actual = solution(INPUT);
+		let actual = solve(INPUT);
 		assert_eq!(actual, EXPECTED);
 	}
 }
