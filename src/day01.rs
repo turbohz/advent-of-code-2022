@@ -23,8 +23,8 @@ pub fn solve(i: &str) -> String {
 mod tests {
 	use crate::day01::solve;
 	const EXPECTED : &str = "24000";
-	const INPUT : &'static str = r###"
-1000
+	const INPUT : &'static str =
+r###"1000
 2000
 3000
 
@@ -39,7 +39,6 @@ mod tests {
 
 10000
 "###;
-
 
 	#[test]
 	fn test() {

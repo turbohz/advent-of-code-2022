@@ -60,7 +60,6 @@ pub fn solve(input:&str) -> String {
 	let solution:u32 =
 		input
 		.lines()
-		.filter(|l| !l.is_empty())
 		.map(grade_round)
 		.into_iter()
 		.sum::<u32>();
@@ -72,8 +71,8 @@ mod tests {
 
 	use crate::day02::*;
 
-	const INPUT: &'static str = r###"
-A Y
+	const INPUT: &'static str =
+r###"A Y
 B X
 C Z
 "###;
